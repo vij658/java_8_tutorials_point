@@ -1,18 +1,35 @@
 package java_8_tutorials_point;
 
-public class Person {
-	Head head;
-	Torso torso;
-	Limb limb;
-	
-	
-	
-	static int run(int speed){
-		System.out.println("Person is running at" + speed + " km");
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.ToString;
 
-		return speed;
+@Data
+@AllArgsConstructor
+@ToString
+public class Person {
+	private int id;
+	private String name;
+
+	public Person(int i, String name) {
+		this.setId(i);
+		this.name = name;
 	}
-	public static void main(String[] args) {
-		Person.run(5);
+
+	public int getId() {
+		return id;
 	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 }
